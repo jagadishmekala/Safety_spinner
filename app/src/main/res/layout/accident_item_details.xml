@@ -1,0 +1,367 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <ScrollView
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:layout_weight="1"
+        android:layout_marginTop="10dp">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:layout_marginTop="4dp">
+            <TextView
+                android:id="@+id/textView30"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="ACCIDENT DETAILS"
+                android:textColor="@color/DashBoardTextColor"
+                android:textStyle="bold"
+                android:layout_marginLeft="20dp"
+                android:layout_marginTop="8dp"
+                android:textSize="14dp"/>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:weightSum="1"
+                android:layout_marginTop="18dp">
+
+                <TextView
+                    android:id="@+id/textView31"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:text="ITEM 1"
+                    android:layout_weight="0.8"
+                    android:layout_marginLeft="20dp"
+                    android:textColor="@color/DashBoardTextColor"
+                    android:textStyle="bold" />
+                <ImageView
+                    android:id="@+id/imageView7"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="0.1"
+                    android:src="@drawable/ic_edit"/>
+            </LinearLayout>
+
+            <TextView
+                android:id="@+id/textViewincident_accident"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Incident Type"
+                android:layout_marginTop="14dp"
+                android:layout_marginLeft="20dp"
+                android:textColor="@color/black" />
+
+            <TextView
+                android:id="@+id/tv_incident"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textStyle="bold"
+                android:textSize="15dp"
+                android:layout_marginTop="6dp"
+                android:layout_marginLeft="20dp"
+                android:textColor="@color/black"/>
+
+            <TextView
+                android:id="@+id/textViewrisk_accident"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Risk Type"
+                android:layout_marginTop="14dp"
+                android:layout_marginLeft="20dp"
+                android:textColor="@color/black" />
+            <TextView
+                android:id="@+id/tv_risk"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textStyle="bold"
+                android:textSize="15dp"
+                android:layout_marginTop="6dp"
+                android:layout_marginLeft="20dp"
+                android:textColor="@color/black"/>
+
+            <TextView
+                android:id="@+id/tv_injured_accident"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Is Any Person Injured?"
+                android:layout_marginTop="14dp"
+                android:layout_marginLeft="20dp"
+                android:textColor="@color/black" />
+            <TextView
+                android:id="@+id/tv_injured"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textStyle="bold"
+                android:textSize="15dp"
+                android:layout_marginTop="6dp"
+                android:layout_marginLeft="20dp"
+                android:textColor="@color/black"/>
+
+            <TextView
+                android:id="@+id/textTwo"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentTop="true"
+                android:layout_alignParentBottom="true"
+                android:layout_marginLeft="20dp"
+                android:layout_marginBottom="11dp"
+                android:text="INJURED PERSON DETAILS"
+                android:textColor="@android:color/holo_blue_light"
+                android:textSize="14sp"
+                android:textStyle="bold" />
+
+            <ListView
+                android:id="@+id/incidentItem_List"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="15dp"
+                android:layout_marginTop="@dimen/margin10dp"
+                android:focusable="false"
+                android:focusableInTouchMode="false"
+                android:nestedScrollingEnabled="true"
+                android:orientation="vertical"
+                android:overScrollMode="never" />
+
+            <TextView
+                android:id="@+id/textViewinjured_accident"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Brief Description Of Incident"
+                android:layout_marginTop="14dp"
+                android:layout_marginLeft="20dp"
+                android:textColor="@color/black" />
+
+            <TextView
+                android:id="@+id/tv_description"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textStyle="bold"
+                android:textSize="15dp"
+                android:layout_marginTop="6dp"
+                android:layout_marginLeft="20dp"
+                android:textColor="@color/black"/>
+
+            <TextView
+                android:id="@+id/textViewdirectcause_accident"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Direct Cause"
+                android:layout_marginTop="14dp"
+                android:layout_marginLeft="20dp"
+                android:textColor="@color/black" />
+
+            <TextView
+                android:id="@+id/tv_directcause"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textStyle="bold"
+                android:textSize="15dp"
+                android:layout_marginTop="6dp"
+                android:layout_marginLeft="20dp"
+                android:textColor="@color/black"/>
+
+            <TextView
+                android:id="@+id/textViewunderlayingcause_accident"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Under Laying Cause"
+                android:layout_marginTop="14dp"
+                android:layout_marginLeft="20dp"
+                android:textColor="@color/black" />
+
+            <TextView
+                android:id="@+id/tv_underlaying_cause"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textStyle="bold"
+                android:textSize="15dp"
+                android:layout_marginTop="6dp"
+                android:layout_marginLeft="20dp"
+                android:textColor="@color/black"/>
+
+            <TextView
+                android:id="@+id/textViewRootcause_accident"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Root Cause"
+                android:layout_marginTop="14dp"
+                android:layout_marginLeft="20dp"
+                android:textColor="@color/black" />
+
+            <TextView
+                android:id="@+id/tv_rootcause"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textStyle="bold"
+                android:textSize="15dp"
+                android:layout_marginTop="6dp"
+                android:layout_marginLeft="20dp"
+                android:textColor="@color/black"/>
+
+            <TextView
+                android:id="@+id/textViewCorrective_Action_accident"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Corrective Action"
+                android:layout_marginTop="14dp"
+                android:layout_marginLeft="20dp"
+                android:textColor="@color/black" />
+
+            <TextView
+                android:id="@+id/tv_Corrective_Action"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textStyle="bold"
+                android:textSize="15dp"
+                android:layout_marginTop="6dp"
+                android:layout_marginLeft="20dp"
+                android:textColor="@color/black"/>
+
+            <TextView
+                android:id="@+id/textViewPreventive_Action_accident"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Preventive Action"
+                android:layout_marginTop="14dp"
+                android:layout_marginLeft="20dp"
+                android:textColor="@color/black" />
+            <TextView
+                android:id="@+id/tv_Preventive_Action"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textStyle="bold"
+                android:textSize="15dp"
+                android:layout_marginTop="6dp"
+                android:layout_marginLeft="20dp"
+                android:textColor="@color/black"/>
+
+            <TextView
+                android:id="@+id/textViewSubcontractor_accident"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Subcontractor"
+                android:layout_marginTop="14dp"
+                android:layout_marginLeft="20dp"
+                android:textColor="@color/black" />
+            <TextView
+                android:id="@+id/tv_Subcontractor"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textStyle="bold"
+                android:textSize="15dp"
+                android:layout_marginTop="6dp"
+                android:layout_marginLeft="20dp"
+                android:textColor="@color/black"/>
+
+            <TextView
+                android:id="@+id/textViewAnalysis_accident"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Analysis"
+                android:layout_marginTop="14dp"
+                android:layout_marginLeft="20dp"
+                android:textColor="@color/black" />
+            <TextView
+                android:id="@+id/tv_Analysis"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textStyle="bold"
+                android:textSize="15dp"
+                android:layout_marginTop="6dp"
+                android:layout_marginLeft="20dp"
+                android:textColor="@color/black"/>
+
+            <TextView
+                android:id="@+id/textViewClassification_accident"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Classification"
+                android:layout_marginTop="14dp"
+                android:layout_marginLeft="20dp"
+                android:textColor="@color/black" />
+            <TextView
+                android:id="@+id/tv_Classification"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textStyle="bold"
+                android:textSize="15dp"
+                android:layout_marginTop="6dp"
+                android:layout_marginLeft="20dp"
+                android:textColor="@color/black"/>
+
+            <TextView
+                android:id="@+id/textViewRemark_accident"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Remark reason why?"
+                android:layout_marginTop="14dp"
+                android:layout_marginLeft="20dp"
+                android:textColor="@color/black" />
+            <TextView
+                android:id="@+id/tv_Remark_reason"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textStyle="bold"
+                android:textSize="15dp"
+                android:layout_marginTop="6dp"
+                android:layout_marginLeft="20dp"
+                android:textColor="@color/black"/>
+
+            <TextView
+                android:id="@+id/idAttachText"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:layout_marginLeft="@dimen/margin20dp"
+                android:layout_marginTop="@dimen/margin15dp"
+                android:text="Photos And Videos"
+                android:textColor="@android:color/holo_blue_light"
+                android:textSize="16sp" />
+            <GridView
+                android:id="@+id/gv_accident"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="@dimen/margin30dp"
+                android:layout_weight="1"
+                android:nestedScrollingEnabled="true"
+                android:numColumns="5" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <LinearLayout
+                    android:id="@+id/action_item_view"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+                    <TextView
+                        android:id="@+id/closeobservation_hree"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="@dimen/margin20dp"
+                        android:text="CLOSE ITEMS HERE"
+                        android:textColor="@android:color/holo_blue_light"
+                        android:textSize="20sp"
+                      />
+                    <ListView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+
+                        android:id="@+id/listview_accident_actionitems"/>
+
+                </LinearLayout>
+            </LinearLayout>
+
+
+        </LinearLayout>
+    </ScrollView>
+</LinearLayout>

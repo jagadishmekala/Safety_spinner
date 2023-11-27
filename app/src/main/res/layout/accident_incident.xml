@@ -1,0 +1,184 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:orientation="vertical"
+    android:layout_height="match_parent">
+
+    <TextView
+        android:id="@+id/text_txt"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentBottom="true"
+        android:layout_margin="@dimen/margin20dp"
+        android:text="PERSON "
+        android:textColor="@android:color/holo_blue_light"
+        android:textSize="18sp" />
+
+    <TextView
+        android:id="@+id/textViewincident_accident"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Name"
+        android:layout_marginTop="14dp"
+        android:layout_marginLeft="20dp"
+        android:textColor="@color/black" />
+
+    <TextView
+        android:id="@+id/name_accident_txt"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textStyle="bold"
+        android:textSize="15dp"
+        android:layout_marginTop="6dp"
+        android:layout_marginLeft="20dp"
+        android:textColor="@color/black"/>
+
+    <TextView
+        android:id="@+id/textViewrisk_accident"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Designation"
+        android:layout_marginTop="14dp"
+        android:layout_marginLeft="20dp"
+        android:textColor="@color/black" />
+    <TextView
+        android:id="@+id/designation_accident_txt"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textStyle="bold"
+        android:textSize="15dp"
+        android:layout_marginTop="6dp"
+        android:layout_marginLeft="20dp"
+        android:textColor="@color/black"/>
+
+    <TextView
+        android:id="@+id/tv_injured_accident"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Age"
+        android:layout_marginTop="14dp"
+        android:layout_marginLeft="20dp"
+        android:textColor="@color/black" />
+    <TextView
+        android:id="@+id/age_accident_txt"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textStyle="bold"
+        android:textSize="15dp"
+        android:layout_marginTop="6dp"
+        android:layout_marginLeft="20dp"
+        android:textColor="@color/black"/>
+
+    <TextView
+        android:id="@+id/tv_injured_p"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+
+        android:textSize="15dp"
+        android:text="Gender"
+        android:layout_marginTop="6dp"
+        android:layout_marginLeft="20dp"
+        android:textColor="@color/black"/>
+    <TextView
+        android:id="@+id/gender_accident_txt"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textStyle="bold"
+        android:textSize="15dp"
+        android:layout_marginTop="6dp"
+        android:layout_marginLeft="20dp"
+        android:textColor="@color/black"/>
+
+
+
+    <TextView
+        android:id="@+id/textViewinjured_accident"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Incident Time"
+        android:layout_marginTop="14dp"
+        android:layout_marginLeft="20dp"
+        android:textColor="@color/black" />
+
+    <TextView
+        android:id="@+id/incidenttime_accident_txt"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textStyle="bold"
+        android:textSize="15dp"
+        android:layout_marginTop="6dp"
+        android:layout_marginLeft="20dp"
+        android:textColor="@color/black"/>
+
+    <TextView
+        android:id="@+id/textViewdirectcause_accident"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Employee Type"
+        android:layout_marginTop="14dp"
+        android:layout_marginLeft="20dp"
+        android:textColor="@color/black" />
+
+    <TextView
+        android:id="@+id/emptype_accident_txt"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textStyle="bold"
+        android:textSize="15dp"
+        android:layout_marginTop="6dp"
+        android:layout_marginLeft="20dp"
+        android:textColor="@color/black"/>
+
+    <TextView
+        android:id="@+id/textViewunderlayingcause_accident"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Treatment"
+        android:layout_marginTop="14dp"
+        android:layout_marginLeft="20dp"
+        android:textColor="@color/black" />
+    <TextView
+        android:id="@+id/treatment_accident_txt"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textStyle="bold"
+        android:textSize="15dp"
+        android:layout_marginTop="6dp"
+        android:layout_marginLeft="20dp"
+        android:textColor="@color/black"/>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+
+        android:layout_margin="20dp">
+
+        <TextView
+            android:id="@+id/attachHead"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_marginTop="2dp"
+            android:text="Photo/Medical Report"
+            android:textColor="@color/DashBoardTextColor"
+            android:textSize="16sp" />
+
+        <ImageView
+            android:id="@+id/addmedicalReport"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:layout_alignParentRight="true"
+            android:src="@drawable/ic_attachment"
+            android:visibility="gone" />
+
+    </RelativeLayout>
+    <GridView
+        android:id="@+id/gv_accident_photos"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/margin20dp"
+        android:numColumns="5" />
+
+</LinearLayout>

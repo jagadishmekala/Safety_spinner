@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="purple_200">#FFBB86FC</color>
+    <color name="purple_500">#FF6200EE</color>
+    <color name="purple_700">#FF3700B3</color>
+    <color name="teal_200">#FF03DAC5</color>
+    <color name="teal_700">#FF018786</color>
+    <color name="black">#070707</color>
+    <color name="white">#FFFFFFFF</color>
+    <color name="DashBoardTextColor">#00BBD3</color>
+    <color name="holoheme">#0F75BA</color>
+    <color name="colorPrimary">#090909</color>
+    <color name = "Red">#E80F0F</color>
+    <color name="Trans">#00000000</color>
+    <color name="low">#FFC806</color>
+    <color name="assigned_text">#FF8800</color>
+    <color name="open_text">#F51605</color>
+    <color name="close_text">#1CC861</color>
+    <color name="transparent">#00000000</color>
+</resources>

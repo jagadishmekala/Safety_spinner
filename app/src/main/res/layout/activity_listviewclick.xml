@@ -1,0 +1,697 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/holoheme"
+    android:orientation="vertical"
+    tools:context=".Listviewclick"
+    >
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+    <ImageView
+        android:id="@+id/imageViewback"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:srcCompat="@drawable/ic_baseline_arrow_back_24"
+        android:layout_marginTop="15dp"
+        android:layout_marginLeft="30dp"
+        tools:ignore="VectorDrawableCompat" />
+
+    <TextView
+        android:id="@+id/textViewmainheading"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="15dp"
+   android:layout_marginLeft="70dp"
+        android:text="00string"
+        android:textColor="@color/white"
+        android:textStyle="bold"/>
+
+    <ImageView
+        android:id="@+id/imageViewdelete"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+      android:layout_marginLeft="70dp"
+        android:layout_marginTop="15dp"
+        app:srcCompat="@drawable/ic_baseline_delete_24"
+        tools:ignore="VectorDrawableCompat" />
+
+    </LinearLayout>
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:background="@drawable/listviewclickone"
+        android:layout_marginTop="20dp">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:layout_marginTop="20dp">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="horizontal"
+            android:layout_weight="1"
+            android:layout_marginLeft="20dp"
+            android:layout_marginRight="20dp">
+
+            <TextView
+                android:id="@+id/textView47"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="0.3"
+                android:text="CUSTOMER INFORMATION"
+                android:textStyle="bold"
+                android:textSize="16dp"
+                android:textColor="@color/DashBoardTextColor"
+                />
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/button_name_heading"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="0"
+               android:background="@drawable/hazaradbutton"
+                android:textColor="@color/white"/>
+<!--                android:background="@color/DashBoardTextColor"-->
+                />
+        </LinearLayout>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginLeft="20dp"
+            android:textColor="@color/black"
+            android:text="Customer Name"
+            android:layout_marginTop="10dp"/>
+
+
+        <TextView
+            android:id="@+id/textViewcustomername"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+
+           android:textColor="@color/black"
+            android:textStyle="bold"
+            android:layout_marginLeft="20dp"
+            android:layout_marginTop="6dp"/>
+
+        <TextView
+            android:id="@+id/textView50"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="Address"
+            android:layout_marginTop="16dp"
+            android:textColor="@color/black"
+            android:layout_marginLeft="20dp"/>
+
+        <TextView
+            android:id="@+id/textViewaddress"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:layout_marginLeft="20dp"
+            android:layout_marginTop="6dp"
+            android:textColor="@color/black"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/textView52"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Zone"
+            android:layout_marginTop="16dp"
+            android:textColor="@color/black"
+            android:layout_marginLeft="20dp"/>
+
+        <TextView
+            android:id="@+id/textViewzone"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="20dp"
+            android:layout_marginTop="6dp"
+            android:textColor="@color/black"
+            android:textStyle="bold"  />
+
+        <TextView
+            android:id="@+id/textView54"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Branch"
+            android:layout_marginTop="16dp"
+            android:textColor="@color/black"
+            android:layout_marginLeft="20dp" />
+
+        <TextView
+            android:id="@+id/textViewbranch"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="20dp"
+            android:layout_marginTop="6dp"
+            android:textColor="@color/black"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/textView_info"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="HAZARD INFORMATION"
+            android:layout_marginTop="16dp"
+            android:textColor="@color/DashBoardTextColor"
+
+            android:layout_marginLeft="20dp"
+            android:textStyle="bold"
+            android:textSize="14dp"/>
+
+        <TextView
+            android:id="@+id/textView57"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="20dp"
+            android:layout_marginTop="15dp"
+            android:text="Hazard ID"
+            android:textColor="@color/black" />
+
+        <TextView
+            android:id="@+id/textViewhazardid"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:layout_marginLeft="20dp"
+           android:textColor="@color/black"
+            android:textStyle="bold"
+            android:textSize="15dp"/>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:layout_marginLeft="20dp"
+            android:layout_marginTop="15dp"
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/textView59"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="0.9"
+                android:text="DD-MM-YY" />
+
+            <TextView
+                android:id="@+id/textView60"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="HH:MM" />
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:layout_marginTop="6dp"
+            android:layout_marginLeft="20dp"
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/textViewdatemnthyear"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:textStyle="bold"
+                android:textColor="@color/black"
+                android:layout_weight="0.9"
+                android:text="TextView" />
+
+            <TextView
+                android:id="@+id/textViewhrmin"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="@color/black"
+                android:layout_weight="1"
+                />
+        </LinearLayout>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginTop="16dp"
+            android:layout_marginLeft="20dp"
+            android:text="EMPLOYEE INFORMATION"
+            android:textColor="@color/DashBoardTextColor"
+            android:textStyle="bold"
+            android:textSize="14dp"/>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginTop="16dp"
+            android:layout_marginLeft="20dp"
+            android:text="Employee Name"
+            android:textColor="@color/black" />
+
+        <TextView
+            android:id ="@+id/txtemployeename"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginTop="6dp"
+            android:layout_marginLeft="20dp"
+            android:textColor="@color/black"
+            android:textStyle="bold"
+            android:textSize="14dp"/>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginTop="16dp"
+            android:layout_marginLeft="20dp"
+            android:text="Employee ID"
+            android:textColor="@color/black" />
+
+        <TextView
+            android:id ="@+id/txtemployeeid"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginTop="6dp"
+            android:layout_marginLeft="20dp"
+            android:textColor="@color/black"
+            android:textStyle="bold"
+            android:textSize="14dp"/>
+
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginTop="16dp"
+            android:layout_marginLeft="20dp"
+            android:text="Employee Email ID"
+            android:textColor="@color/black" />
+
+        <TextView
+            android:id ="@+id/txtemployeeemailid"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginTop="6dp"
+            android:layout_marginLeft="20dp"
+            android:textColor="@color/black"
+            android:textStyle="bold"
+            android:textSize="14dp"/>
+
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginTop="16dp"
+            android:layout_marginLeft="20dp"
+            android:text="Employee Phone Number"
+            android:textColor="@color/black" />
+
+        <TextView
+            android:id ="@+id/txtemployeephonenumber"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginTop="6dp"
+            android:layout_marginLeft="20dp"
+            android:textColor="@color/black"
+            android:textStyle="bold"
+            android:textSize="14dp"/>
+
+
+        <TextView
+            android:id="@+id/textView20"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="PROJECT/SITE/LOCATION/FACTORY INCHARGE INFORMATION"
+            android:maxLines="2"
+            android:minLines="2"
+            android:textStyle="bold"
+            android:layout_marginTop="18dp"
+            android:layout_marginLeft="20dp"
+            android:textColor="@color/DashBoardTextColor"
+            android:textSize="16dp"/>
+
+        <TextView
+            android:id="@+id/textView21"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="12dp"
+            android:layout_marginLeft="20dp"
+            android:text="Project/Site/Location/Factory Incharge Name"
+            android:textColor="@color/black"/>
+
+        <TextView
+            android:id="@+id/textViewprjtinchargename"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginLeft="20dp"
+            android:layout_marginTop="6dp"
+            android:textColor="@color/black"
+            android:textSize="14dp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/textview22"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="19dp"
+            android:layout_marginLeft="20dp"
+            android:textColor="@color/black"
+            android:text="Project/Site/Location/Factory Incharge Id" />
+
+        <TextView
+            android:id="@+id/textViewinchargeid"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:textColor="@color/black"
+            android:layout_marginTop="6dp"
+           android:textStyle="bold"
+            android:layout_marginLeft="20dp"
+            android:textSize="14dp"/>
+
+        <TextView
+            android:id="@+id/textView25"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:layout_marginLeft="20dp"
+            android:text="Project/Site/Location/Factory Phone Number"
+            android:textColor="@color/black"/>
+
+        <TextView
+            android:id="@+id/textViewinchargephnenumber"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:textColor="@color/black"
+            android:layout_marginTop="6dp"
+            android:layout_marginLeft="20dp"
+            android:textSize="14dp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/textview16"
+            android:layout_width="match_parent"
+            android:layout_marginLeft="20dp"
+            android:maxLines="2"
+            android:layout_marginTop="18dp"
+            android:textColor="@color/DashBoardTextColor"
+            android:textSize="16dp"
+            android:textStyle="bold"
+            android:layout_height="wrap_content"
+            android:text="CONCERNED TEAM/ENGINEER/SUPERVISOR INFORMATION" />
+
+        <TextView
+            android:id="@+id/textView26"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Concerned Team/Engineer/Supervisor Name"
+            android:layout_marginTop="18dp"
+            android:textColor="@color/black"
+            android:layout_marginLeft="20dp"/>
+
+        <TextView
+            android:id="@+id/supervisornameconcerned"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Null"
+            android:layout_marginTop="18dp"
+            android:textStyle="bold"
+            android:textColor="@color/black"
+            android:layout_marginLeft="20dp"/>
+
+        <TextView
+            android:id="@+id/textView28"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Concerned Team/Engineer/Supervisor Email"
+            android:layout_marginTop="18dp"
+            android:textColor="@color/black"
+            android:layout_marginLeft="20dp"/>
+
+        <TextView
+            android:id="@+id/supervisoremailconcerned"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Null"
+            android:layout_marginTop="18dp"
+            android:textStyle="bold"
+            android:textColor="@color/black"
+            android:layout_marginLeft="20dp"/>
+
+        <TextView
+            android:id="@+id/textView29"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Other Email ID"
+            android:layout_marginTop="18dp"
+            android:textColor="@color/black"
+            android:layout_marginLeft="20dp"/>
+        <TextView
+            android:id="@+id/supervisorotheremailconcerned"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+          android:textStyle="bold"
+            android:text="Null"
+            android:textColor="@color/black"
+            android:layout_marginLeft="20dp"/>
+
+
+<!--        <TextView-->
+<!--            android:id="@+id/textView30"-->
+<!--            android:layout_width="match_parent"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:text="HAZARD DETAILS"-->
+<!--            android:textColor="@color/holoheme"-->
+<!--            android:textStyle="bold"-->
+<!--            android:layout_marginLeft="20dp"-->
+<!--            android:layout_marginTop="18dp"-->
+<!--            android:textSize="14dp"/>-->
+
+<!--        <LinearLayout-->
+<!--            android:layout_width="match_parent"-->
+<!--            android:layout_height="match_parent"-->
+<!--            android:orientation="horizontal"-->
+<!--            android:layout_weight="1"-->
+<!--            android:layout_marginTop="18dp">-->
+
+<!--            <TextView-->
+<!--                android:id="@+id/textView31"-->
+<!--                android:layout_width="0dp"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                android:text="ITEM 1"-->
+<!--                android:layout_weight="0.5"-->
+<!--                android:layout_marginLeft="20dp"-->
+<!--                android:textColor="@color/holoheme"-->
+<!--                android:textStyle="bold" />-->
+
+<!--            <ImageView-->
+<!--                android:id="@+id/imageView7"-->
+<!--                android:layout_width="wrap_content"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                android:layout_weight="0.1"-->
+<!--                app:srcCompat="@drawable/pencil"-->
+<!--                tools:ignore="VectorDrawableCompat" />-->
+<!--        </LinearLayout>-->
+
+<!--        <TextView-->
+<!--            android:id="@+id/textView32"-->
+<!--            android:layout_width="match_parent"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:text="Vertical"-->
+<!--            android:layout_marginTop="14dp"-->
+<!--            android:layout_marginLeft="20dp"-->
+<!--            android:textColor="@color/black"/>-->
+
+<!--        <TextView-->
+<!--            android:id="@+id/textView_vertical"-->
+<!--            android:layout_width="match_parent"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:layout_marginLeft="20dp"-->
+<!--            android:layout_marginTop="6dp"-->
+<!--            android:textColor="@color/black"-->
+<!--            android:textSize="15dp"-->
+<!--            android:textStyle="bold" />-->
+
+<!--        <TextView-->
+<!--            android:id="@+id/textView34"-->
+<!--            android:layout_width="match_parent"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:text="Hazard Type"-->
+<!--            android:layout_marginTop="14dp"-->
+<!--            android:layout_marginLeft="20dp"-->
+<!--            android:textColor="@color/black"/>-->
+
+<!--        <TextView-->
+<!--            android:id="@+id/textView_hazardtype"-->
+<!--            android:layout_width="match_parent"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:layout_marginLeft="20dp"-->
+<!--            android:layout_marginTop="6dp"-->
+<!--            android:textStyle="bold"-->
+<!--            android:textSize="15dp"-->
+<!--            android:textColor="@color/black" />-->
+
+<!--        <TextView-->
+<!--            android:id="@+id/textView36"-->
+<!--            android:layout_width="match_parent"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:text="Risk"-->
+<!--            android:layout_marginTop="14dp"-->
+<!--            android:layout_marginLeft="20dp"-->
+<!--            android:textColor="@color/black" />-->
+
+<!--        <TextView-->
+<!--            android:id="@+id/textView_risk"-->
+<!--            android:layout_width="match_parent"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:textStyle="bold"-->
+<!--            android:textSize="15dp"-->
+<!--            android:layout_marginTop="6dp"-->
+<!--            android:layout_marginLeft="20dp"-->
+<!--            android:textColor="@color/black"/>-->
+
+<!--        <TextView-->
+<!--            android:id="@+id/textView38"-->
+<!--            android:layout_width="match_parent"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:layout_marginLeft="20dp"-->
+<!--            android:text="category"-->
+<!--            android:layout_marginTop="14dp"-->
+<!--            android:textColor="@color/black" />-->
+
+<!--        <TextView-->
+<!--            android:id="@+id/textView_category"-->
+<!--            android:layout_width="match_parent"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:layout_marginLeft="20dp"-->
+<!--          android:textColor="@color/black"-->
+<!--            android:textStyle="bold"-->
+<!--            android:layout_marginTop="6dp"-->
+<!--            android:textSize="15dp"/>-->
+
+<!--        <TextView-->
+<!--            android:id="@+id/textView40"-->
+<!--            android:layout_width="match_parent"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:text="Brief Description"-->
+<!--            android:textColor="@color/black"-->
+<!--            android:layout_marginTop="15dp"-->
+<!--            android:layout_marginLeft="20dp"/>-->
+
+<!--        <TextView-->
+<!--            android:id="@+id/textView_brief"-->
+<!--            android:layout_width="match_parent"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:textColor="@color/black"-->
+<!--            android:textStyle="bold"-->
+<!--            android:layout_marginLeft="20dp"-->
+<!--            android:layout_marginTop="9dp"/>-->
+
+<!--        <TextView-->
+<!--            android:id="@+id/textView42"-->
+<!--            android:layout_width="match_parent"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:layout_marginTop="21dp"-->
+<!--            android:layout_marginLeft="20dp"-->
+<!--            android:textColor="@color/black"-->
+<!--            android:text="Injury that could have happend?" />-->
+<!--        <TextView-->
+<!--            android:id="@+id/textView_injuryhappend"-->
+<!--            android:layout_width="match_parent"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:text="null"-->
+<!--            android:textStyle="bold"-->
+<!--            android:layout_marginTop="26dp"-->
+<!--            android:textColor="@color/black"-->
+<!--            android:layout_marginLeft="20dp"/>-->
+<!--        <TextView-->
+<!--            android:id="@+id/textView43"-->
+<!--            android:layout_width="match_parent"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:text="Corrective Action"-->
+<!--            android:layout_marginTop="26dp"-->
+<!--            android:textColor="@color/black"-->
+<!--            android:layout_marginLeft="20dp"/>-->
+<!--        <TextView-->
+<!--            android:id="@+id/textView_corrective"-->
+<!--            android:layout_width="match_parent"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:text="null"-->
+<!--            android:textStyle="bold"-->
+<!--            android:layout_marginTop="26dp"-->
+<!--            android:textColor="@color/black"-->
+<!--            android:layout_marginLeft="20dp"/>-->
+
+<!--        <TextView-->
+<!--            android:id="@+id/textView44"-->
+<!--            android:layout_width="match_parent"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:text="Preventive Action"-->
+<!--            android:layout_marginTop="26dp"-->
+<!--            android:textColor="@color/black"-->
+<!--            android:layout_marginLeft="20dp"/>-->
+<!--        <TextView-->
+<!--            android:id="@+id/textView_preventiveaction"-->
+<!--            android:layout_width="match_parent"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:text="null"-->
+<!--            android:textStyle="bold"-->
+<!--            android:layout_marginTop="26dp"-->
+<!--            android:textColor="@color/black"-->
+<!--            android:layout_marginLeft="20dp"/>-->
+
+<!--        <TextView-->
+<!--            android:id="@+id/textView45"-->
+<!--            android:layout_width="match_parent"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:text="Subcontractor"-->
+<!--            android:layout_marginTop="10dp"-->
+<!--            android:textColor="@color/black"-->
+<!--            android:layout_marginLeft="20dp"/>-->
+
+<!--        <TextView-->
+<!--            android:id="@+id/textView_subcontractor"-->
+<!--            android:layout_width="match_parent"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:layout_marginTop="9dp"-->
+<!--            android:textStyle="bold"-->
+<!--            android:textColor="@color/black"-->
+<!--            android:layout_marginLeft="20dp"/>-->
+
+<!--        <TextView-->
+<!--            android:layout_width="match_parent"-->
+<!--            android:layout_height="match_parent"-->
+<!--            android:text="Photos And Videos"-->
+<!--            android:layout_marginLeft="20dp"-->
+<!--            android:textColor="@color/holoheme"-->
+<!--            android:textStyle="bold"-->
+<!--            android:textSize="14dp"/>-->
+
+<!--        <ImageView-->
+<!--            android:id="@+id/imageView8"-->
+<!--            android:layout_width="match_parent"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:layout_weight="1"-->
+<!--            android:layout_marginLeft="20dp"-->
+<!--            app:srcCompat="@drawable/ic_baseline_photo_24"-->
+<!--            tools:ignore="VectorDrawableCompat" />-->
+
+        <ListView
+            android:id = "@+id/listviewww"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="18dp"/>
+
+    </LinearLayout>
+    </ScrollView>
+
+
+</LinearLayout>
+

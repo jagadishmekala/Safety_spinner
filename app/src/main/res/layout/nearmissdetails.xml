@@ -1,0 +1,311 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:background="@color/white">
+    <ScrollView
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:layout_weight="1"
+        android:layout_marginTop="10dp">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:layout_marginTop="4dp">
+            <TextView
+                android:id="@+id/textView30"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="NEAR MISS DETAILS"
+                android:textColor="@color/DashBoardTextColor"
+                android:textStyle="bold"
+                android:layout_marginLeft="20dp"
+                android:layout_marginTop="8dp"
+                android:textSize="14dp"/>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:weightSum="1"
+                android:layout_marginTop="18dp">
+
+                <TextView
+                    android:id="@+id/textView31"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:text="ITEM 1"
+                    android:layout_weight="0.8"
+                    android:layout_marginLeft="20dp"
+                    android:textColor="@color/DashBoardTextColor"
+                    android:textStyle="bold" />
+                <ImageView
+                    android:id="@+id/imageView7"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="0.1"
+                    app:srcCompat="@drawable/ic_edit"
+                    tools:ignore="VectorDrawableCompat"/>
+
+            </LinearLayout>
+            <TextView
+                android:id="@+id/textView32"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Vertical"
+                android:layout_marginTop="14dp"
+                android:layout_marginLeft="20dp"
+                android:textColor="@color/black"/>
+
+            <TextView
+                android:id="@+id/textViewverticalnearmiss"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="20dp"
+                android:layout_marginTop="6dp"
+                android:textColor="@color/black"
+                android:textSize="15dp"
+                android:textStyle="bold" />
+            <TextView
+                android:id="@+id/textView34"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Hazard Type"
+                android:layout_marginTop="14dp"
+                android:layout_marginLeft="20dp"
+                android:textColor="@color/black"/>
+
+            <TextView
+                android:id="@+id/textViewhazardtypenearmiss"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="20dp"
+                android:layout_marginTop="6dp"
+                android:textStyle="bold"
+                android:textSize="15dp"
+                android:textColor="@color/black"/>
+            <TextView
+                android:id="@+id/textView36"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Risk"
+                android:layout_marginTop="14dp"
+                android:layout_marginLeft="20dp"
+                android:textColor="@color/black" />
+
+            <TextView
+                android:id="@+id/textViewrisknearmiss"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textStyle="bold"
+                android:textSize="15dp"
+                android:layout_marginTop="6dp"
+                android:layout_marginLeft="20dp"
+                android:textColor="@color/black"/>
+            <TextView
+                android:id="@+id/textView38"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="20dp"
+                android:text="category"
+                android:layout_marginTop="14dp"
+                android:textColor="@color/black" />
+
+            <TextView
+                android:id="@+id/textViewcategorynearmiss"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="20dp"
+                android:textColor="@color/black"
+                android:textStyle="bold"
+                android:layout_marginTop="6dp"
+                android:textSize="15dp"/>
+            <TextView
+                android:id="@+id/textView40"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Brief Description"
+                android:textColor="@color/black"
+                android:layout_marginTop="15dp"
+                android:layout_marginLeft="20dp"/>
+
+            <TextView
+                android:id="@+id/textViewbriefdescriptionnearmiss"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textColor="@color/black"
+                android:layout_marginLeft="20dp"
+                android:textStyle="bold"
+                android:layout_marginTop="9dp"/>
+            <TextView
+                android:id="@+id/textView42"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="21dp"
+                android:layout_marginLeft="20dp"
+                android:textColor="@color/black"
+                android:text="Injury that could have happend?" />
+            <TextView
+                android:id="@+id/textViewinjurynearmiss"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:layout_marginLeft="20dp"
+                android:textColor="@color/black"
+                android:textStyle="bold"/>
+            <TextView
+                android:id="@+id/textView43"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Corrective Action"
+                android:layout_marginTop="8dp"
+                android:textColor="@color/black"
+                android:layout_marginLeft="20dp"/>
+            <TextView
+                android:id="@+id/textViewcorrectiveactionnearmiss"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textStyle="bold"
+                android:layout_marginTop="8dp"
+                android:textColor="@color/black"
+                android:layout_marginLeft="20dp"/>
+
+            <TextView
+                android:id="@+id/textView44"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Preventive Action"
+                android:layout_marginTop="4dp"
+                android:textColor="@color/black"
+                android:layout_marginLeft="20dp"/>
+            <TextView
+                android:id="@+id/textViewprventiveactionnearmiss"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="4dp"
+                android:textColor="@color/black"
+                android:layout_marginLeft="20dp"/>
+
+            <TextView
+                android:id="@+id/textView45"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Subcontractor"
+                android:layout_marginTop="10dp"
+                android:textColor="@color/black"
+                android:layout_marginLeft="20dp"/>
+            <TextView
+                android:id="@+id/textViewSubContractorNearMiss"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="9dp"
+                android:textColor="@color/black"
+                android:textStyle="bold"
+                android:layout_marginLeft="20dp"/>
+            <TextView
+                android:id="@+id/tv_rootcause"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="9dp"
+                android:text="Root cause"
+                android:textColor="@color/black"
+                android:layout_marginLeft="20dp"/>
+            <TextView
+                android:id="@+id/textViewrootcausenearmiss"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="9dp"
+                android:textColor="@color/black"
+                android:textStyle="bold"
+                android:layout_marginLeft="20dp"/>
+            <TextView
+                android:id="@+id/Analysis"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Analysis"
+                android:layout_marginTop="10dp"
+                android:textColor="@color/black"
+                android:layout_marginLeft="20dp"/>
+            <TextView
+                android:id="@+id/textViewanalysisnearmiss"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="9dp"
+                android:textColor="@color/black"
+                android:textStyle="bold"
+                android:layout_marginLeft="20dp"/>
+            <TextView
+                android:id="@+id/clasification"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Clasification"
+                android:layout_marginTop="10dp"
+                android:textColor="@color/black"
+                android:layout_marginLeft="20dp"/>
+            <TextView
+                android:id="@+id/textViewclassificationnearmiss"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="9dp"
+                android:textColor="@color/black"
+                android:textStyle="bold"
+                android:layout_marginLeft="20dp"/>
+            <TextView
+                android:id="@+id/remarks"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Remark reason why?"
+                android:layout_marginTop="10dp"
+                android:textColor="@color/black"
+                android:layout_marginLeft="20dp"/>
+            <TextView
+                android:id="@+id/textViewremarkswhynearmiss"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="9dp"
+                android:textColor="@color/black"
+                android:textStyle="bold"
+                android:layout_marginLeft="20dp"/>
+
+            <TextView
+                android:id="@+id/textview46"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Photos And Videos"
+                android:layout_marginLeft="20dp"
+                android:textColor="@color/DashBoardTextColor"
+                android:textStyle="bold"
+                android:layout_marginTop="10dp"
+                android:textSize="14dp"/>
+
+            <GridView
+                android:id="@+id/gv_attachmentsnearmiss"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="15dp"
+                android:layout_marginLeft="18dp"
+                android:layout_marginBottom="10dp"
+                android:numColumns="5" />
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text = "CLOSE OBSERVATION HERE"
+                android:textColor="@color/DashBoardTextColor"
+                android:textSize="16dp"
+                android:textStyle="bold"
+                android:layout_marginLeft="18dp"
+                android:layout_marginTop="15dp"/>
+            <ListView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="14dp"
+                android:layout_marginLeft="20dp"
+                android:id="@+id/listactionnearmiss"
+                android:layout_marginBottom="28dp"/>
+        </LinearLayout>
+    </ScrollView>
+</LinearLayout>

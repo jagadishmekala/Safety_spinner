@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<selector xmlns:android="http://schemas.android.com/apk/res/android">
+    <!-- Default state (when the button is not pressed or focused) -->
+    <item android:state_pressed="false" >
+        <shape android:shape="rectangle">
+            <solid android:color="@android:color/white" /> <!-- Default background color -->
+            <corners android:radius="180dp" /> <!-- Custom rounded corners, change the radius as needed -->
+        </shape>
+    </item>
+
+    <!-- Pressed state (when the button is pressed) -->
+    <item android:state_pressed="true">
+        <shape android:shape="rectangle">
+            <solid android:color="@color/black" /> <!-- Change this to your desired color -->
+            <corners android:radius="180dp" /> <!-- Custom rounded corners for pressed state -->
+        </shape>
+    </item>
+
+</selector>

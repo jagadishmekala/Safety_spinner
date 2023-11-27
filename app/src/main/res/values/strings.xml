@@ -1,0 +1,18 @@
+<resources>
+    <string name="app_name"><i>V</i> Safety</string>
+    <string name="hazardAnswer"><b>What is Hazard?</b>\n\n Any Situation or Activity Potential for injury and / or Property damage \n</string>
+    <string name="unsafe_condition"><b> What is Unsafe Condition?</b>\n\n Any situation place supportive for human injury or property damage \n</string>
+    <string name="unsafe_act"><b> What is Unsafe Act?</b>\n\n Any personal activity may lead to injury or property damage or both \n</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="nearmiss">Near Miss</string>
+    <string name="nearmissAnswer"><b> What is Near Miss?</b>\n\n A Near Miss is an unplanned event that did not result in injury, illeness, or damage-but had the potential to do so.</string>
+    <string name="accident">Accident</string>
+    <string name="accidentAnswer"><b> What is Accident?</b>\n\n An accident is an incident which has given rise to injury, ill health or fatality and /or property damage.</string>
+    <string-array name="Coutries">
+        <item>INDIA</item>
+        <item>DUBAI</item>
+        <item>USA</item>
+        <item>UK</item>
+    </string-array>
+</resources>
