@@ -183,7 +183,7 @@ public class Dashboard extends AppCompatActivity {
         homeGps.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent i = new Intent(Dashboard.this,MapActivity.class);
+                Intent i = new Intent(Dashboard.this,MapsActivity.class);
                 startActivity(i);
             }
         });

@@ -1,7 +1,5 @@
 package com.example.voltasassignment;
 
-import java.util.List;
-
 import retrofit2.Call;
 import retrofit2.http.Body;
 import retrofit2.http.GET;
@@ -29,7 +27,17 @@ public interface DataAPi {
            @Path("observationId") String observationId
     );
     @GET("safetyapi/api/Observation/GetUserObservations")
-    Call<ListDetailsResult> getAllObservations
+    Call<MapResponse> getmapobservations
             (@Header("Authorization") String Response);
+
+    @GET("safetyapi/api/Report/GetGuestZones/SHQ")
+    Call<ZoneResponseCreate>getzones(@Header("Authorization")String Response);
+
+    @GET("safetyapi/api/Report/GetGuestBranchs/{zoneId}")
+    Call<ZoneId_Response>getbranch
+            (@Header("Authorization")String Response, @Path("zoneId")String zoneId);
+
+    @GET("safetyapi/api/User/SearchUsers/{searchKey}")
+    Call<Autotext_Responsee>getsearchusers(@Header("Authorization") String Response);
 
 }

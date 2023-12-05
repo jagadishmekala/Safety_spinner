@@ -38,6 +38,7 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.example.voltasassignment.retrofitinterface.RetrofitConnect;
+import com.google.android.material.floatingactionbutton.FloatingActionButton;
 
 import retrofit2.Call;
 import retrofit2.Callback;
@@ -55,7 +56,7 @@ public class HazradActivity extends AppCompatActivity {
     EditText searchEditText;
 ImageButton imagebuttonsearch;
     String type, subType, searchkey;
-
+FloatingActionButton floating_btn_hazard;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -72,11 +73,18 @@ ImageButton imagebuttonsearch;
         searchEditText = findViewById(R.id.editTextSearchbar);
         imagebuttonsearch = findViewById(R.id.imageViewSearchbar);
         listviewmainheading = findViewById(R.id.listviewmainheading);
+        floating_btn_hazard = findViewById(R.id.floating_btn_hazard);
         listviewmainheading.setText(listViewMainHeadingText);
         customAdapter = new Hazradcustomlistadapter(this, hazardResults);
         listView.setAdapter(customAdapter);
        listView.setTextFilterEnabled(true);
-
+        floating_btn_hazard.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                   startActivity( new Intent(HazradActivity.this, HazardCreationActivity.class));
+            }
+        });
+        ///
         String authToken = "Bearer " + getTokenFromSharedPreferences();
         if (strSubType.equalsIgnoreCase("Near Miss")  ) {
             type = "Incident";

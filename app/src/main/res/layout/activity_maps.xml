@@ -6,12 +6,14 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    tools:context=".MapActivity">
+    tools:context=".MapsActivity">
 
-    <FrameLayout
+    <fragment xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:tools="http://schemas.android.com/tools"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:id="@+id/mapview"/>
+        android:id="@+id/mapview"
+        android:name="com.google.android.gms.maps.SupportMapFragment" />
     <LinearLayout
         android:layout_width="130dp"
         android:layout_height="130dp"

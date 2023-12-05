@@ -1,0 +1,307 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout  xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="@mipmap/splash_bg"
+    tools:context=".HazardCreationActivity">
+
+    <TableLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        android:id="@+id/simpleTableLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:stretchColumns="*">
+        <TableRow
+
+            android:id="@+id/firstRow"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:id="@+id/cancel_txt_back"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:padding="18dip"
+                android:text="Cancel"
+                android:textColor="@color/white"
+                android:layout_gravity="left"
+                android:textSize="12dp" />
+
+            <TextView
+
+                android:id="@+id/Mainheading"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:padding="18dip"
+                android:text="HAZARD"
+                android:layout_gravity="center_horizontal"
+                android:textColor="@color/white"
+               android:textStyle="bold"
+                android:textSize="20dp" />
+            <TextView
+                android:id="@+id/txt_Next_create"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="@color/white"
+                android:padding="18dip"
+                android:layout_gravity="right"
+                android:text="Next"
+                android:textSize="12dp" />
+
+        </TableRow>
+    </TableLayout>
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginTop="@dimen/margin20dp"
+        android:padding="@dimen/margin10dp"
+        android:background="@drawable/listviewclickone">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/margin20dp"
+            android:textColor="@color/DashBoardTextColor"
+            android:layout_marginLeft="@dimen/margin10dp"
+            android:textSize="18sp"
+            android:text="CUSTOMER INFORMATION"/>
+            <com.google.android.material.textfield.TextInputLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="@dimen/margin10dp">
+
+            <EditText
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/edt_customername_create"
+                android:paddingTop="@dimen/margin30dp"
+                android:background="#0000"
+                android:hint="Customer Name"/>
+            </com.google.android.material.textfield.TextInputLayout>
+            <com.google.android.material.textfield.TextInputLayout
+
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="@dimen/margin10dp">
+            <EditText
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:paddingTop="@dimen/margin30dp"
+               android:id="@+id/edt_Address_create"
+                android:background="#0000"
+                android:hint="Address"/>
+            </com.google.android.material.textfield.TextInputLayout>
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="10dp"
+                android:text="Zone"/>
+            <Spinner
+                android:layout_width="match_parent"
+                android:id="@+id/spin_zone_create"
+                android:layout_margin="10dp"
+                android:padding="@dimen/margin10dp"
+                android:background="@drawable/spinner_border_rect"
+                android:layout_height="wrap_content"/>
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="10dp"
+                android:text="Branch"/>
+            <Spinner
+                android:layout_width="match_parent"
+                android:layout_margin="10dp"
+                android:id="@+id/spin_branch_create"
+                android:padding="@dimen/margin10dp"
+                android:background="@drawable/spinner_border_rect"
+                android:layout_height="wrap_content"/>
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="10dp"
+                android:textColor="@color/DashBoardTextColor"
+                android:textSize="18sp"
+                android:text="OBSERVATION INFORMATION"/>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                >
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="10dp"
+                android:text="DD-MM-YYYY"/>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/margin30dp"
+                android:layout_marginTop="@dimen/margin10dp"
+                android:text="HH:MM"/>
+            </LinearLayout>
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+                <EditText
+                    android:id="@+id/datecreate"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="@dimen/margin10dp"
+                    android:text="00-00-0000"
+                    android:background="#0000"
+                    android:textSize="16sp"
+                    android:textStyle="bold" />
+                <EditText
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/timecreate"
+                    android:layout_marginLeft="@dimen/margin30dp"
+                    android:layout_marginTop="@dimen/margin10dp"
+                    android:textStyle="bold"
+                    android:background="#0000"
+                    android:inputType="time"
+                    android:textSize="18sp"
+                    android:text="00:00"/>
+<!--                <TimePicker-->
+<!--                    android:layout_width="1dp"-->
+<!--                    android:layout_height="1dp"/>-->
+
+            </LinearLayout>
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="10dp"
+                android:text="PROJECT/SITE/LOCATION/FACTORY INCHARGE INFORMATION"
+                android:textColor="@color/DashBoardTextColor"
+                android:textSize="18sp"/>
+            <com.google.android.material.textfield.TextInputLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="@dimen/margin10dp">
+                <AutoCompleteTextView
+                    android:id="@+id/edt_Incharge_Name_create"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="Project/Site/location/Factory/Incharge Name"
+                    android:imeOptions="actionNext"
+                    android:background="#0000"
+                    android:inputType="textNoSuggestions|text"
+                    android:paddingTop="@dimen/margin30dp"
+                    android:textColor="@android:color/black"
+                    android:textSize="14sp" />
+
+            </com.google.android.material.textfield.TextInputLayout>
+            <com.google.android.material.textfield.TextInputLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="@dimen/margin10dp">
+            <EditText
+                android:id="@+id/edt_Factor_Incharge_Id_create"
+                android:layout_width="match_parent"
+                android:background="#0000"
+                android:paddingTop="@dimen/margin30dp"
+                android:layout_height="wrap_content"
+                android:hint="Project/Site/location/Factory Incharge Id"/>
+        </com.google.android.material.textfield.TextInputLayout>
+            <com.google.android.material.textfield.TextInputLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="@dimen/margin10dp">
+            <EditText
+                android:layout_width="match_parent"
+                android:background="#0000"
+                android:paddingTop="@dimen/margin30dp"
+                android:id="@+id/edt_Emailid_factory_create"
+                android:layout_height="wrap_content"
+                android:drawableRight="@drawable/baseline_email_24"
+                android:hint="Project/Site/location/Factory Incharge Email Id"/>
+    </com.google.android.material.textfield.TextInputLayout>
+            <com.google.android.material.textfield.TextInputLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="@dimen/margin10dp">
+            <EditText
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:drawableRight="@drawable/baseline_call_24"
+                android:id="@+id/edt_Factor_Incharge_Phone_create"
+                android:paddingTop="@dimen/margin30dp"
+                android:background="#0000"
+                android:hint="Project/Site/location/Factory Incharge Phone Number"/>
+</com.google.android.material.textfield.TextInputLayout>
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="CONCERNED TEAM/ENGINEER/SUPERVISOR INFORMATION"
+                android:textSize="18sp"
+                android:layout_margin="10dp"
+                android:textColor="@color/DashBoardTextColor"/>
+            <com.google.android.material.textfield.TextInputLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="@dimen/margin10dp">
+                <AutoCompleteTextView
+                    android:id="@+id/edt_supervisorname_create"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="#0000"
+                    android:paddingTop="@dimen/margin30dp"
+                    android:hint="Concerned Team/Engineer/Supervisor Name"
+                    android:inputType="text"
+                    android:textColor="@color/black" />
+            </com.google.android.material.textfield.TextInputLayout>
+            <com.google.android.material.textfield.TextInputLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="@dimen/margin10dp">
+                <EditText
+                   android:id="@+id/edt_suervisoremail_create"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="#0000"
+                    android:paddingTop="@dimen/margin30dp"
+                    android:hint="Concerned Team/Engineer/Supervisor Email"
+                    android:inputType="text"
+                    android:textColor="@color/black" />
+            </com.google.android.material.textfield.TextInputLayout>
+            <com.google.android.material.textfield.TextInputLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="@dimen/margin10dp">
+                <EditText
+                    android:id="@+id/edt_otheremail_id_create"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="#0000"
+                    android:hint="Other Email ID"
+                    android:inputType="text"
+                    android:paddingTop="@dimen/margin30dp"
+                    android:textColor="@color/black" />
+            </com.google.android.material.textfield.TextInputLayout>
+            <com.google.android.material.textfield.TextInputLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="@dimen/margin10dp">
+                <EditText
+                    android:id="@+id/edt_target_date_to_close_create"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="#0000"
+                    android:paddingTop="@dimen/margin30dp"
+                    android:hint="Target Date to Close(DD-MM-YYYY)"
+                    android:inputType="date"
+                    android:textColor="@color/black" />
+            </com.google.android.material.textfield.TextInputLayout>
+
+        </LinearLayout>
+
+    </ScrollView>
+
+    </LinearLayout>
+
