@@ -38,6 +38,8 @@ public interface DataAPi {
             (@Header("Authorization")String Response, @Path("zoneId")String zoneId);
 
     @GET("safetyapi/api/User/SearchUsers/{searchKey}")
-    Call<Autotext_Responsee>getsearchusers(@Header("Authorization") String Response);
+    Call<Autotext_Responsee>getsearchusers(
+            @Header("Authorization") String Response,
+            @Path("searchKey")String searchKey);
 
 }

@@ -68,7 +68,7 @@
             android:layout_marginTop="@dimen/margin20dp"
             android:textColor="@color/DashBoardTextColor"
             android:layout_marginLeft="@dimen/margin10dp"
-            android:textSize="18sp"
+            android:textSize="15sp"
             android:text="CUSTOMER INFORMATION"/>
             <com.google.android.material.textfield.TextInputLayout
                 android:layout_width="match_parent"
@@ -125,7 +125,7 @@
                 android:layout_height="wrap_content"
                 android:layout_margin="10dp"
                 android:textColor="@color/DashBoardTextColor"
-                android:textSize="18sp"
+                android:textSize="15sp"
                 android:text="OBSERVATION INFORMATION"/>
             <LinearLayout
                 android:layout_width="match_parent"
@@ -179,24 +179,24 @@
                 android:layout_margin="10dp"
                 android:text="PROJECT/SITE/LOCATION/FACTORY INCHARGE INFORMATION"
                 android:textColor="@color/DashBoardTextColor"
-                android:textSize="18sp"/>
-            <com.google.android.material.textfield.TextInputLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_margin="@dimen/margin10dp">
+                android:textSize="15sp"/>
+          <TextView
+              android:layout_width="match_parent"
+              android:layout_height="wrap_content"
+             android:layout_marginLeft="@dimen/margin10dp"
+
+              android:text="Project/Site/location/Factory/Incharge Name"/>
                 <AutoCompleteTextView
                     android:id="@+id/edt_Incharge_Name_create"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:hint="Project/Site/location/Factory/Incharge Name"
                     android:imeOptions="actionNext"
-                    android:background="#0000"
+                    android:layout_margin="@dimen/margin10dp"
                     android:inputType="textNoSuggestions|text"
-                    android:paddingTop="@dimen/margin30dp"
                     android:textColor="@android:color/black"
                     android:textSize="14sp" />
 
-            </com.google.android.material.textfield.TextInputLayout>
+
             <com.google.android.material.textfield.TextInputLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -239,23 +239,22 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="CONCERNED TEAM/ENGINEER/SUPERVISOR INFORMATION"
-                android:textSize="18sp"
+                android:textSize="15sp"
                 android:layout_margin="10dp"
                 android:textColor="@color/DashBoardTextColor"/>
-            <com.google.android.material.textfield.TextInputLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_margin="@dimen/margin10dp">
+          <TextView
+              android:layout_width="match_parent"
+              android:layout_height="wrap_content"
+              android:layout_marginLeft="@dimen/margin10dp"
+              android:text="Concerned Team/Engineer/Supervisor Name"/>
                 <AutoCompleteTextView
                     android:id="@+id/edt_supervisorname_create"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:background="#0000"
-                    android:paddingTop="@dimen/margin30dp"
-                    android:hint="Concerned Team/Engineer/Supervisor Name"
                     android:inputType="text"
+                    android:layout_margin="@dimen/margin10dp"
                     android:textColor="@color/black" />
-            </com.google.android.material.textfield.TextInputLayout>
+
             <com.google.android.material.textfield.TextInputLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"

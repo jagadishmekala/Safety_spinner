@@ -11,6 +11,8 @@ import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Build;
 import android.os.Bundle;
+import android.text.Editable;
+import android.text.TextWatcher;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
@@ -28,6 +30,7 @@ import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.Date;
+import java.util.List;
 
 import retrofit2.Call;
 import retrofit2.Callback;
@@ -40,9 +43,12 @@ public class HazardCreationActivity extends AppCompatActivity {
     TextView cancel_txt_back, txt_Next_create, Mainheading;
     ArrayList<String> zonesList, zonesbranchList, zoneIdList;
     DatePickerDialog datePickerDialog;
+   List<Autotext_Result> autoTextUserArrayList,ConcernedEngArrayList;
     ArrayAdapter zoneAdapter, branchadapter;
     AutoCompleteTextView edt_Incharge_Name_create, edt_supervisorname_create;
     String zoneid;
+    HazardResult hazardResult;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -65,18 +71,94 @@ public class HazardCreationActivity extends AppCompatActivity {
         spin_branch_create = findViewById(R.id.spin_branch_create);
         edt_Incharge_Name_create = findViewById(R.id.edt_Incharge_Name_create);
         edt_Emailid_factory_create = findViewById(R.id.edt_Emailid_factory_create);
+        edt_Factor_Incharge_Id_create=findViewById(R.id.edt_Factor_Incharge_Id_create);
         edt_Factor_Incharge_Phone_create = findViewById(R.id.edt_Factor_Incharge_Phone_create);
         edt_supervisorname_create = findViewById(R.id.edt_supervisorname_create);
         edt_suervisoremail_create = findViewById(R.id.edt_suervisoremail_create);
         edt_otheremail_id_create = findViewById(R.id.edt_otheremail_id_create);
         edt_target_date_to_close_create = findViewById(R.id.edt_target_date_to_close_create);
 
+        txt_Next_create.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                if(validatefields()){
 
+                }
+            }
+        });
+
+//   if(hazardResult.getReason().equalsIgnoreCase("Hazard")){
+//       Mainheading.setText("HAZARDS");
+//   }
+//   else{
+       Mainheading.setText("HAZARD");
+//   }
         //calling Methods
         currenttimedate(); //calling current timeand date method
         Timepicker(); // calling date picker when click edittext date
         datepicker();
         zonespinner();// calling time picker when click edittext time
+        edt_supervisorname_create.addTextChangedListener(new TextWatcher() {
+            @Override
+            public void beforeTextChanged(CharSequence s, int start, int count, int after) {
+            }
+            @Override
+            public void onTextChanged(CharSequence s, int start, int before, int count) {
+                if(s.length()>=1){
+                    concernSuperVisor( s.toString());
+                }
+                else{
+                    edt_suervisoremail_create.setText("");
+                }
+            }
+            @Override
+            public void afterTextChanged(Editable s) {
+            }
+        });
+                edt_supervisorname_create.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+                    @Override
+                    public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+                        Autotext_Result selectedUser = (Autotext_Result) parent.getItemAtPosition(position);
+                        if(selectedUser!=null){
+                        // Update the corresponding fields with data from the selected suggestion
+                        edt_supervisorname_create.setText(selectedUser.getUserName());
+                        edt_suervisoremail_create.setText(selectedUser.getUserMail());
+                        }
+                    }
+                });
+        edt_Incharge_Name_create.addTextChangedListener(new TextWatcher() {
+            @Override
+            public void beforeTextChanged(CharSequence s, int start, int count, int after) {
+            }
+            @Override
+            public void onTextChanged(CharSequence s, int start, int before, int count) {
+            }
+            @Override
+            public void afterTextChanged(Editable s) {
+                if(s.length()>=1){
+                    factoryProject( s.toString());
+                }
+                else {
+                    edt_Factor_Incharge_Id_create.setText("");
+                    edt_Emailid_factory_create.setText("");
+                    edt_Factor_Incharge_Phone_create.setText("");
+                }
+            }
+        });
+        edt_Incharge_Name_create.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+                Autotext_Result selectedUser = (Autotext_Result) parent.getItemAtPosition(position);
+
+                if(selectedUser!=null){
+                // Update the corresponding fields with data from the selected suggestion
+                edt_Incharge_Name_create.setText(selectedUser.getUserName());
+                edt_Factor_Incharge_Id_create.setText(selectedUser.getUserId());
+                edt_Emailid_factory_create.setText(selectedUser.getUserMail());
+                edt_Factor_Incharge_Phone_create.setText(selectedUser.getUserPhone());
+                }
+            }
+        });
         spin_zone_create.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
             @Override
             public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
@@ -174,6 +256,7 @@ public class HazardCreationActivity extends AppCompatActivity {
         time = time.substring(0, 5);
         datecreate.setText(date);
         timecreate.setText(time);
+        edt_target_date_to_close_create.setText(date);
     }
 
     public void zonespinner() {
@@ -198,15 +281,9 @@ public class HazardCreationActivity extends AppCompatActivity {
                         }
                         zoneAdapter = new ArrayAdapter(HazardCreationActivity.this, android.R.layout.simple_list_item_1, zonesList);
                         zoneAdapter.setDropDownViewResource(android.R.layout.simple_list_item_1);
-                        if(zonesList.size()>0){
+                        if (zonesList.size() > 0) {
                             spin_zone_create.setAdapter(zoneAdapter);
                         }
-
-
-//
-//                        branchadapter = new ArrayAdapter<>(HazardCreationActivity.this, android.R.layout.simple_list_item_1, zonesbranchList);
-//                        branchadapter.setDropDownViewResource(android.R.layout.simple_list_item_1);
-//                        spin_branch_create.setAdapter(branchadapter);
                     }
                 }
             }
@@ -223,7 +300,7 @@ public class HazardCreationActivity extends AppCompatActivity {
         RetrofitConnect retrofitConnect = new RetrofitConnect();
         String token = sharedPreferences.getString("token", "");
         DataAPi dataApi = retrofitConnect.getLink().create(DataAPi.class);
-        Call<ZoneId_Response> call = dataApi.getbranch("Bearer " + token,zoneId);
+        Call<ZoneId_Response> call = dataApi.getbranch("Bearer " + token, zoneId);
         call.enqueue(new Callback<ZoneId_Response>() {
             @Override
             public void onResponse(Call<ZoneId_Response> call, Response<ZoneId_Response> response) {
@@ -250,43 +327,104 @@ public class HazardCreationActivity extends AppCompatActivity {
             }
         });
     }
-    String[] countryNameList = {"India", "China", "Australia", "New Zealand", "England", "Pakistan"};
-    public void autotextfactory(){
+
+
+
+    public void factoryProject(String searchKey){
         SharedPreferences sharedPreferences = getSharedPreferences("My Prefs", Context.MODE_PRIVATE);
         RetrofitConnect retrofitConnect = new RetrofitConnect();
         String token = sharedPreferences.getString("token", "");
         DataAPi dataApi = retrofitConnect.getLink().create(DataAPi.class);
-        Call<Autotext_Responsee> call = dataApi.getsearchusers("Bearer " + token);
+        Call<Autotext_Responsee> call = dataApi.getsearchusers("Bearer " + token,searchKey);
         call.enqueue(new Callback<Autotext_Responsee>() {
-
             @Override
             public void onResponse(Call<Autotext_Responsee> call, Response<Autotext_Responsee> response) {
-                if(response.isSuccessful()){
-                    Autotext_Result autotextResult = (Autotext_Result) response.body().getResult();
-                    if(autotextResult != null ){
-//                        AutoCompleteTextView simpleAutoCompleteTextView = (AutoCompleteTextView) findViewById(R.id.edt_Incharge_Name_create);
-//                        ArrayAdapter adapter = new ArrayAdapter(HazardCreationActivity.this, android.R.layout.simple_list_item_1, countryNameList);
-//
-//                        simpleAutoCompleteTextView.setAdapter(adapter);
-//                        simpleAutoCompleteTextView.setThreshold(1);
-//                        simpleAutoCompleteTextView.setAdapter(adapter);
-                        edt_Incharge_Name_create.setText(autotextResult.getUserName().toString());
-                        edt_Factor_Incharge_Id_create.setText(autotextResult.getUserId().toString());
-                        edt_Emailid_factory_create.setText(autotextResult.getUserMail().toString());
-                        edt_Factor_Incharge_Phone_create.setText(autotextResult.getUserPhone().toString());
-                    }
+                autoTextUserArrayList = new ArrayList<>();
+                if (response.isSuccessful()) {
+                    autoTextUserArrayList.addAll(response.body().getResult());
+
+                    AutoTextProj_Adapter autoCompleteAdapter = new AutoTextProj_Adapter(HazardCreationActivity.this, R.layout.searchtext, R.id.searchItemNames, autoTextUserArrayList);
+                    edt_Incharge_Name_create.setAdapter(autoCompleteAdapter);
+                    autoCompleteAdapter.notifyDataSetChanged();
                 }
-
-//
-//                Autotext_Result autotextResult= (Autotext_Result)
             }
-
             @Override
             public void onFailure(Call<Autotext_Responsee> call, Throwable t) {
 
             }
         });
     }
+    public void concernSuperVisor(String searchKey){
+        SharedPreferences sharedPreferences = getSharedPreferences("My Prefs", Context.MODE_PRIVATE);
+        RetrofitConnect retrofitConnect = new RetrofitConnect();
+        String token = sharedPreferences.getString("token", "");
+        DataAPi dataApi = retrofitConnect.getLink().create(DataAPi.class);
+        Call<Autotext_Responsee> call = dataApi.getsearchusers("Bearer " + token,searchKey);
+        call.enqueue(new Callback<Autotext_Responsee>() {
+            @Override
+            public void onResponse(Call<Autotext_Responsee> call, Response<Autotext_Responsee> response) {
+                ConcernedEngArrayList = new ArrayList<>();
+                if (response.isSuccessful()) {
+                    ConcernedEngArrayList.addAll(response.body().getResult());
+                    AutoTextProj_Adapter autoCompleteAdapter = new AutoTextProj_Adapter(HazardCreationActivity.this, R.layout.searchtext, R.id.searchItemNames, ConcernedEngArrayList);
+                    edt_supervisorname_create.setAdapter(autoCompleteAdapter);
+                    autoCompleteAdapter.notifyDataSetChanged();
+                }
+            }
+            @Override
+            public void onFailure(Call<Autotext_Responsee> call, Throwable t) {
+            }
+        });
+    }
+    private boolean validatefields(){
+        String customername = edt_customername_create.getText().toString().trim();
+        String address = edt_Address_create.getText().toString().trim();
+//        String zone= spin_zone_create.getTransitionName().toString().trim();
+//        String branch=spin_branch_create.getTransitionName().toString().trim();
+        String inchargenamefactory=edt_Incharge_Name_create.getText().toString().trim();
+        String inchargeidfactory=edt_Factor_Incharge_Id_create.getText().toString().trim();
+        String inchargeemailfactory=edt_Emailid_factory_create.getText().toString().trim();
+        String phonenumberfactory = edt_Factor_Incharge_Phone_create.getText().toString().trim();
 
+        String concernSupervisorname =edt_supervisorname_create.getText().toString().trim();
+        String concernSupervisoremail = edt_suervisoremail_create.getText().toString().trim();
+        boolean isValid = true;
+        if(customername.isEmpty()){
+            edt_customername_create.setError("Please Enter Customer name");
+
+            isValid=false;
+        }
+        if(address.isEmpty()){
+            edt_Address_create.setError("Please Enter Address");
+
+        return isValid;
+    } if(inchargenamefactory.isEmpty()){
+            edt_Incharge_Name_create.setError("Please Enter Incharge Name");
+            isValid=false;
+        }
+        if(inchargeidfactory.isEmpty()){
+            edt_Factor_Incharge_Id_create.setError("Please Enter Incharge ID");
+            isValid=false;
+        }
+        if(inchargeemailfactory.isEmpty()){
+            edt_Emailid_factory_create.setError("Please Enter Incharge Email Id");
+            isValid=false;
+        }
+
+        if(phonenumberfactory.isEmpty()){
+            edt_Factor_Incharge_Phone_create.setError("Please Enter Incharge Phone Number");
+            isValid=false;
+        }
+        if(concernSupervisorname.isEmpty()){
+            edt_supervisorname_create.setError("Please Enter Supervisor Name");
+            isValid=false;
+        }
+        if(concernSupervisoremail.isEmpty()){
+            edt_suervisoremail_create.setError("Please Enter SuperVisor Email Id");
+            isValid=false;
+        }
+
+        return isValid;
+    }
 }
 

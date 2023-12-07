@@ -258,7 +258,7 @@ FloatingActionButton floating_btn_hazard;
 
     }
 
-    private void getAllObservatins(String authToken, String type, String subType) {
+    public void getAllObservatins(String authToken, String type, String subType) {
         SharedPreferences sharedPreferences = getSharedPreferences("MyPrefs", Context.MODE_PRIVATE);
         String token = sharedPreferences.getString("token", "");
 //        retrofit = new Retrofit.Builder().baseUrl("https://vserveq.voltasworld.com/").addConverterFactory(GsonConverterFactory.create()).build();
