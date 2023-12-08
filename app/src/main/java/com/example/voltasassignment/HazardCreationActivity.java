@@ -23,15 +23,12 @@ import android.widget.Spinner;
 import android.widget.TextView;
 import android.widget.TimePicker;
 import android.widget.Toast;
-
 import com.example.voltasassignment.retrofitinterface.RetrofitConnect;
-
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.Date;
 import java.util.List;
-
 import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
@@ -161,12 +158,19 @@ public class HazardCreationActivity extends AppCompatActivity {
         });
         spin_zone_create.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
             @Override
-            public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
-                if (zoneIdList.size() > position) {
-                    zoneid = zoneIdList.get(position);
+            public void onItemSelected(AdapterView<?> adapterView, View view, int i, long id) {
+
+                if (adapterView.getSelectedItem().toString().equalsIgnoreCase("Select")) {
+//                    zonesList.remove("Select");
+                    spin_branch_create.setAdapter(null);
+
+                }
+               else if (zoneIdList.size() >i) {
+                    zoneid = zoneIdList.get(i);
                     ZoneIdbranch(zoneid);
-                    zonesList.remove("Select");
-                } else {
+//                    zonesList.remove("Select");
+                }
+                else {
                     Toast.makeText(HazardCreationActivity.this, "Please select zone", Toast.LENGTH_SHORT).show();
                 }
             }
@@ -272,6 +276,7 @@ public class HazardCreationActivity extends AppCompatActivity {
                 zonesList = new ArrayList<>();
                 zoneIdList = new ArrayList<>();
                 zonesList.add("Select");
+                zoneIdList.add("Select");
                 if (response.isSuccessful()) {
                     if (response.body().getResult() != null) {
                         for (int i = 0; i < response.body().getResult().size(); i++) {
@@ -281,9 +286,10 @@ public class HazardCreationActivity extends AppCompatActivity {
                         }
                         zoneAdapter = new ArrayAdapter(HazardCreationActivity.this, android.R.layout.simple_list_item_1, zonesList);
                         zoneAdapter.setDropDownViewResource(android.R.layout.simple_list_item_1);
-                        if (zonesList.size() > 0) {
+                        if (zonesList.size() > 0 && zoneIdList.size()>0) {
                             spin_zone_create.setAdapter(zoneAdapter);
                         }
+
                     }
                 }
             }
@@ -315,7 +321,9 @@ public class HazardCreationActivity extends AppCompatActivity {
                         }
                         branchadapter = new ArrayAdapter<>(HazardCreationActivity.this, android.R.layout.simple_list_item_1, zonesbranchList);
                         branchadapter.setDropDownViewResource(android.R.layout.simple_list_item_1);
+//                        if(zonesbranchList.size()>1){
                         spin_branch_create.setAdapter(branchadapter);
+
                     }
                 }
 
@@ -379,52 +387,67 @@ public class HazardCreationActivity extends AppCompatActivity {
     private boolean validatefields(){
         String customername = edt_customername_create.getText().toString().trim();
         String address = edt_Address_create.getText().toString().trim();
-//        String zone= spin_zone_create.getTransitionName().toString().trim();
-//        String branch=spin_branch_create.getTransitionName().toString().trim();
+        Spinner zone= findViewById(R.id.spin_zone_create);
+        Spinner branch= findViewById(R.id.spin_branch_create);
         String inchargenamefactory=edt_Incharge_Name_create.getText().toString().trim();
         String inchargeidfactory=edt_Factor_Incharge_Id_create.getText().toString().trim();
         String inchargeemailfactory=edt_Emailid_factory_create.getText().toString().trim();
         String phonenumberfactory = edt_Factor_Incharge_Phone_create.getText().toString().trim();
+        TextView errorTextview = (TextView) spin_zone_create.getSelectedView();
+        errorTextview.setError("Your Error Message here");
+//        boolean isValid = true;
 
-        String concernSupervisorname =edt_supervisorname_create.getText().toString().trim();
-        String concernSupervisoremail = edt_suervisoremail_create.getText().toString().trim();
-        boolean isValid = true;
+
         if(customername.isEmpty()){
             edt_customername_create.setError("Please Enter Customer name");
-
-            isValid=false;
+            edt_customername_create.requestFocus();
+            return false;
         }
         if(address.isEmpty()){
             edt_Address_create.setError("Please Enter Address");
+            edt_Address_create.requestFocus();
 
-        return isValid;
-    } if(inchargenamefactory.isEmpty()){
+        return false;
+    }
+        if(zone.getSelectedItemPosition()==0){
+//           spin_zone_create.("Zone selection is required");
+            Toast.makeText(HazardCreationActivity.this,"Pleaase Select Zone",Toast.LENGTH_SHORT).show();
+            spin_zone_create.requestFocus();
+            spin_zone_create.performClick();
+            ((TextView)spin_zone_create.getSelectedView()).setError("Error message");
+            return false;
+        }
+        if(branch.getSelectedItemPosition()==0){
+            ((TextView) spin_branch_create.getSelectedView()).setError("Branch selection is required");
+            Toast.makeText(HazardCreationActivity.this,"Pleaase Select Branch",Toast.LENGTH_SHORT).show();
+            spin_branch_create.requestFocus();
+            spin_branch_create.performClick();
+            return false;
+        }
+        if(inchargenamefactory.isEmpty()){
             edt_Incharge_Name_create.setError("Please Enter Incharge Name");
-            isValid=false;
+            edt_Incharge_Name_create.requestFocus();
+            return false;
         }
         if(inchargeidfactory.isEmpty()){
             edt_Factor_Incharge_Id_create.setError("Please Enter Incharge ID");
-            isValid=false;
+            edt_Factor_Incharge_Id_create.requestFocus();
+            return false;
         }
         if(inchargeemailfactory.isEmpty()){
             edt_Emailid_factory_create.setError("Please Enter Incharge Email Id");
-            isValid=false;
+            edt_Emailid_factory_create.requestFocus();
+            return false;
         }
 
         if(phonenumberfactory.isEmpty()){
             edt_Factor_Incharge_Phone_create.setError("Please Enter Incharge Phone Number");
-            isValid=false;
-        }
-        if(concernSupervisorname.isEmpty()){
-            edt_supervisorname_create.setError("Please Enter Supervisor Name");
-            isValid=false;
-        }
-        if(concernSupervisoremail.isEmpty()){
-            edt_suervisoremail_create.setError("Please Enter SuperVisor Email Id");
-            isValid=false;
+            edt_Factor_Incharge_Phone_create.requestFocus();
+            return false;
         }
 
-        return isValid;
+
+        return true;
     }
 }
 

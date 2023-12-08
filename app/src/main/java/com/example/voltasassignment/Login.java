@@ -22,6 +22,7 @@ import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.Spinner;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.example.voltasassignment.retrofitinterface.RetrofitConnect;
 import com.google.android.material.textfield.TextInputEditText;
@@ -206,12 +207,18 @@ public class Login extends AppCompatActivity {
 
         if (username.isEmpty()) {
             mTextid.setError("Username is required");
-            isValid = false;
+            mTextid.requestFocus();
+            Toast.makeText(Login.this, "Please Enter Username", Toast.LENGTH_SHORT).show();
+            return false;
         }
 
-        if (password.isEmpty()) {
+        else if(password.length() == 0) {
             mTextpswrd.setError("Password is required");
-            isValid = false;
+            mTextpswrd.requestFocus();
+            Toast.makeText(Login.this, "Please Enter Password", Toast.LENGTH_SHORT).show();
+            return false;
+        }else {
+
         }
 
         return isValid;
