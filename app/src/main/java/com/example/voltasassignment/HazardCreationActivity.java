@@ -2,11 +2,13 @@
 
 package com.example.voltasassignment;
 
+import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.content.ContextCompat;
 import android.app.DatePickerDialog;
 import android.app.TimePickerDialog;
 import android.content.Context;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Build;
@@ -17,13 +19,14 @@ import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.AutoCompleteTextView;
+import android.widget.BaseAdapter;
 import android.widget.DatePicker;
 import android.widget.EditText;
 import android.widget.Spinner;
 import android.widget.TextView;
 import android.widget.TimePicker;
 import android.widget.Toast;
-import com.example.voltasassignment.retrofitinterface.RetrofitConnect;
+import com.example.voltasassignment.retrofitinterface. RetrofitConnect;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Calendar;
@@ -79,7 +82,7 @@ public class HazardCreationActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 if(validatefields()){
-
+                startActivity(new Intent(HazardCreationActivity.this, HazardCreationActivity2.class));
                 }
             }
         });
@@ -387,43 +390,55 @@ public class HazardCreationActivity extends AppCompatActivity {
     private boolean validatefields(){
         String customername = edt_customername_create.getText().toString().trim();
         String address = edt_Address_create.getText().toString().trim();
-        Spinner zone= findViewById(R.id.spin_zone_create);
-        Spinner branch= findViewById(R.id.spin_branch_create);
+//        Spinner zone= findViewById(R.id.spin_zone_create);
+//        Spinner branch= findViewById(R.id.spin_branch_create);
         String inchargenamefactory=edt_Incharge_Name_create.getText().toString().trim();
         String inchargeidfactory=edt_Factor_Incharge_Id_create.getText().toString().trim();
         String inchargeemailfactory=edt_Emailid_factory_create.getText().toString().trim();
         String phonenumberfactory = edt_Factor_Incharge_Phone_create.getText().toString().trim();
-        TextView errorTextview = (TextView) spin_zone_create.getSelectedView();
-        errorTextview.setError("Your Error Message here");
+//        TextView errorTextview = (TextView) spin_zone_create.getSelectedView();
+//        errorTextview.setError("Your Error Message here");
 //        boolean isValid = true;
 
 
         if(customername.isEmpty()){
             edt_customername_create.setError("Please Enter Customer name");
             edt_customername_create.requestFocus();
+            edt_customername_create.performClick();
             return false;
         }
         if(address.isEmpty()){
             edt_Address_create.setError("Please Enter Address");
             edt_Address_create.requestFocus();
+            edt_Address_create.performClick();
 
         return false;
     }
-        if(zone.getSelectedItemPosition()==0){
-//           spin_zone_create.("Zone selection is required");
-            Toast.makeText(HazardCreationActivity.this,"Pleaase Select Zone",Toast.LENGTH_SHORT).show();
+        if(spin_zone_create.getSelectedItemPosition()==0){
+            ((TextView)spin_zone_create.getSelectedView()).setError("Error message");
+            Toast.makeText(HazardCreationActivity.this,"Please Select Zone.....",Toast.LENGTH_SHORT).show();
+            showZoneAlertDialog();
             spin_zone_create.requestFocus();
             spin_zone_create.performClick();
-            ((TextView)spin_zone_create.getSelectedView()).setError("Error message");
+
             return false;
         }
-        if(branch.getSelectedItemPosition()==0){
+        if(spin_branch_create.getSelectedItemPosition()==0){
             ((TextView) spin_branch_create.getSelectedView()).setError("Branch selection is required");
-            Toast.makeText(HazardCreationActivity.this,"Pleaase Select Branch",Toast.LENGTH_SHORT).show();
+            Toast.makeText(HazardCreationActivity.this,"Please Select Branch....",Toast.LENGTH_SHORT).show();
+            showbranchAlertDialog();
             spin_branch_create.requestFocus();
             spin_branch_create.performClick();
             return false;
         }
+//        if (spin_branch_create.getSelectedItem().toString().equalsIgnoreCase("Select")) {
+//            ( (TextView) spin_branch_create.getSelectedItem()).setError("Please Select Zone");
+//            return false;
+//        }
+//        if (spin_zone_create.getSelectedItem().toString().equalsIgnoreCase("Select")) {
+//            ( (TextView) spin_zone_create.getSelectedItem()).setError("Please Select Branch");
+//            return false;
+//        }
         if(inchargenamefactory.isEmpty()){
             edt_Incharge_Name_create.setError("Please Enter Incharge Name");
             edt_Incharge_Name_create.requestFocus();
@@ -448,6 +463,32 @@ public class HazardCreationActivity extends AppCompatActivity {
 
 
         return true;
+    }
+    private void showZoneAlertDialog() {
+        AlertDialog.Builder builder = new AlertDialog.Builder(this);
+        builder.setTitle("Select Zone")
+                .setMessage("Please select a ZONE")
+                .setPositiveButton("OK", new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialog, int which) {
+                        // Handle positive button click
+                        dialog.dismiss();
+                    }
+                })
+                .show();
+    }
+    private void showbranchAlertDialog() {
+        AlertDialog.Builder builder = new AlertDialog.Builder(this);
+        builder.setTitle("Select Branch")
+                .setMessage("Please select BRANCH")
+                .setPositiveButton("OK", new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialog, int which) {
+                        // Handle positive button click
+                        dialog.dismiss();
+                    }
+                })
+                .show();
     }
 }
 

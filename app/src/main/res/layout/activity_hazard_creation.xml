@@ -106,7 +106,6 @@
                 android:id="@+id/spin_zone_create"
                 android:layout_margin="10dp"
                 android:padding="@dimen/margin10dp"
-
                 android:background="@drawable/spinner_border_rect"
                 android:layout_height="wrap_content"/>
             <TextView

@@ -20,20 +20,24 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.VoltasAssignment">
         <activity
-            android:name=".HazardCreationActivity"
+            android:name=".HazardCreationActivity2"
             android:launchMode="singleInstance"
             android:screenOrientation="portrait"
             android:exported="false" />
         <activity
-            android:name=".MapsActivity"
+            android:name=".HazardCreationActivity"
+            android:exported="false"
             android:launchMode="singleInstance"
-            android:screenOrientation="portrait"
-            android:exported="false" />
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".MapsActivity"
+            android:exported="false"
+            android:launchMode="singleInstance"
+            android:screenOrientation="portrait" />
 
         <meta-data
             android:name="com.google.android.geo.API_KEY"
             android:value="AIzaSyDIHFaG2gLp8bZSKTjLUMsG4akAL_nbIo4" />
-
 
         <activity
             android:name=".Listviewclick"

@@ -42,4 +42,7 @@ public interface DataAPi {
             @Header("Authorization") String Response,
             @Path("searchKey")String searchKey);
 
+    @GET("safetyapi/api/LookUp/GetByEntityName/Observation")
+    Call<EntityObservationResponse>getEntitynames(@Header("Authorization")String Response,@Path("entityName")String entityName);
+
 }
