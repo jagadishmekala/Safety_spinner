@@ -5,50 +5,28 @@ import java.util.List;
 import com.google.gson.annotations.Expose;
 import com.google.gson.annotations.SerializedName;
 public class EntityObservationResult {
-
-    @SerializedName("entityName")
+    @SerializedName("clientId")
     @Expose
-    private String entityName;
-    @SerializedName("lookUpName")
+    private String clientId;
+    @SerializedName("clientName")
     @Expose
-    private String lookUpName;
-    @SerializedName("lookUpValue")
-    @Expose
-    private String lookUpValue;
-    @SerializedName("lookUpId")
-    @Expose
-    private String lookUpId;
+    private String clientName;
 
-    public String getEntityName() {
-        return entityName;
+    public String getClientId() {
+        return clientId;
     }
 
-    public void setEntityName(String entityName) {
-        this.entityName = entityName;
+    public void setClientId(String clientId) {
+        this.clientId = clientId;
     }
 
-    public String getLookUpName() {
-        return lookUpName;
+    public String getClientName() {
+        return clientName;
     }
 
-    public void setLookUpName(String lookUpName) {
-        this.lookUpName = lookUpName;
+    public void setClientName(String clientName) {
+        this.clientName = clientName;
     }
 
-    public String getLookUpValue() {
-        return lookUpValue;
-    }
-
-    public void setLookUpValue(String lookUpValue) {
-        this.lookUpValue = lookUpValue;
-    }
-
-    public String getLookUpId() {
-        return lookUpId;
-    }
-
-    public void setLookUpId(String lookUpId) {
-        this.lookUpId = lookUpId;
-    }
 
 }

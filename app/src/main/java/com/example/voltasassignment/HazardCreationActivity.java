@@ -82,7 +82,13 @@ public class HazardCreationActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 if(validatefields()){
-                startActivity(new Intent(HazardCreationActivity.this, HazardCreationActivity2.class));
+                    String customername= edt_customername_create.getText().toString();
+                    Intent i = new Intent(getApplicationContext(),HazardCreationActivity2.class);
+//                    i.putExtra(customername);
+                     startActivity(i);
+
+//                edt_customername_create.getText(getIntent().putExtra());
+
                 }
             }
         });
